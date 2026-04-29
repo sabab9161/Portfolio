@@ -2,6 +2,8 @@ import {
   ArrowUpRight,
   BriefcaseBusiness,
   Code2,
+  Download,
+  FileText,
   Github,
   Linkedin,
   Mail,
@@ -10,12 +12,12 @@ import {
   Phone,
   Server,
   Sparkles,
-  UserRound,
   X,
 } from "lucide-react";
 import { useState } from "react";
 
 const profilePhoto = `${import.meta.env.BASE_URL}sabab-photo-clean.png`;
+const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
 const email = "sababhussin107@gmail.com";
 const phone = "+919161546184";
 const linkedin = "https://www.linkedin.com/in/sabab-hussain-559181253";
@@ -109,10 +111,12 @@ function App() {
               </a>
             ))}
             <a
-              href={`mailto:${email}?subject=Resume request`}
-              className="inline-flex items-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent"
+              href={resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-accent hover:shadow-lg"
             >
-              Resume <ArrowUpRight size={16} />
+              Resume <FileText size={16} />
             </a>
           </div>
 
@@ -140,11 +144,13 @@ function App() {
                 </a>
               ))}
               <a
-                href={`mailto:${email}?subject=Resume request`}
+                href={resumeUrl}
+                target="_blank"
+                rel="noreferrer"
                 onClick={closeMenu}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white shadow-md"
               >
-                Resume <ArrowUpRight size={16} />
+                Resume <FileText size={16} />
               </a>
             </div>
           </div>
@@ -165,12 +171,27 @@ function App() {
                 I am Sabab Hussain, a developer focused on professional web experiences across
                 frontend, backend, and UI design.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href="#projects"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-teal-800"
                 >
                   View Projects <ArrowUpRight size={18} />
+                </a>
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-teal-600 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-900/20 transition hover:scale-[1.03] hover:shadow-xl hover:shadow-indigo-900/20 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                >
+                  Open Resume <FileText size={18} />
+                </a>
+                <a
+                  href={resumeUrl}
+                  download="Sabab-Hussain-Resume.pdf"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:scale-[1.03] hover:border-accent hover:text-accent hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                >
+                  Download Resume <Download size={18} />
                 </a>
                 <a
                   href={`mailto:${email}`}
